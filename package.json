@@ -1,0 +1,37 @@
+{
+  "name": "paperlens",
+  "version": "0.1.0",
+  "description": "AI paper reader — select any passage, get a translation in the floating panel",
+  "main": "./out/main/index.js",
+  "author": "paperlens",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "dev:web": "vite --config vite.web.config.ts",
+    "build": "electron-vite build",
+    "build:web": "vite build --config vite.web.config.ts",
+    "preview": "electron-vite preview",
+    "start": "electron . --no-sandbox --user-data-dir=.userdata",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "sample": "python scripts/make_sample_pdf.py",
+    "test:web": "node scripts/cdp-test.mjs",
+    "test:electron": "node scripts/electron-test.mjs"
+  },
+  "dependencies": {
+    "dexie": "^4.0.10",
+    "pdfjs-dist": "^4.10.38",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.3.1",
+    "electron-vite": "^2.3.0",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.14"
+  }
+}

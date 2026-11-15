@@ -1,0 +1,228 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R 5 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 6 0 R >> >> /Contents 8 0 R >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 6 0 R >> >> /Contents 9 0 R >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 6362 >>
+stream
+BT /F1 7.5 Tf 1 0 0 1 54.00 752.00 Tm (Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing) Tj ET
+BT /F1 8 Tf 1 0 0 1 302.00 34.00 Tm (1) Tj ET
+BT /F1 15 Tf 1 0 0 1 53.00 718.00 Tm (Retrieval-Augmented Instruction Tuning for Low-Resource) Tj ET
+BT /F1 15 Tf 1 0 0 1 172.60 699.00 Tm (Scientific Question Answering) Tj ET
+BT /F1 10 Tf 1 0 0 1 215.00 676.00 Tm (Wei Zhang, Yuki Tanaka, Marco Rossi) Tj ET
+BT /F1 8 Tf 1 0 0 1 194.70 662.00 Tm (Institute for Language Technology, Example University) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 640.00 Tm (Abstract) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 627.00 Tm (Scientific question answering demands models that can ground their answers in dense technical prose) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 616.00 Tm (while remaining robust to terminology that is rare in general-domain corpora. We study whether retrieva-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 605.00 Tm (l-augmented instruction tuning closes this gap without increasing inference cost. Our pipeline couples a) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 594.00 Tm (sparse-dense hybrid retriever with an instruction-tuned decoder, and trains the decoder on a curriculum) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 583.00 Tm (of progressively harder passages sampled from open-access preprints. On three benchmarks spanning biolo-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 572.00 Tm (gy, materials science, and computer science, the method improves exact-match accuracy by 7.4 points over) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 561.00 Tm (a strong instruction-tuned baseline, with the largest gains on questions whose evidence spans multiple) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 550.00 Tm (paragraphs. Ablations show that the curriculum matters more than the retriever choice, and that gains) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 539.00 Tm (persist when the retriever is frozen. We release the training mixture and evaluation harness.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 516.00 Tm (Large language models have become the default) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 505.00 Tm (interface for scientific literature search,) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 494.00 Tm (yet their answers remain unstable when a ques-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 483.00 Tm (tion requires synthesising evidence from) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 472.00 Tm (several passages. A common failure mode is) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 461.00 Tm (fluent but unsupported elaboration: the model) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 450.00 Tm (produces a plausible mechanism, a plausible) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 439.00 Tm (number, or a plausible citation, none of which) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 428.00 Tm (appear in the source material. This is especi-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 417.00 Tm (ally damaging in domains where readers cannot) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 406.00 Tm (verify claims from background knowledge alone,) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 395.00 Tm (such as materials synthesis or clinical) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 384.00 Tm (dosage.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 367.00 Tm (Retrieval augmentation is the standard remedy.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 356.00 Tm (A retriever selects passages from a corpus,) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 345.00 Tm (and the generator conditions on them. In prac-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 334.00 Tm (tice, however, most pipelines are tuned on) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 323.00 Tm (open-domain web text, where passages are) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 312.00 Tm (short, redundant, and lexically close to the) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 301.00 Tm (question. Scientific passages behave differen-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 290.00 Tm (tly. They are long, densely nominalised, and) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 279.00 Tm (rely on notation that the retriever has never) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 268.00 Tm (seen during pretraining. A retriever trained) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 257.00 Tm (on Wikipedia therefore underperforms exactly) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 246.00 Tm (where the task is hardest.) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 516.00 Tm (We argue that the mismatch is best addressed) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 505.00 Tm (at training time rather than at retrieval) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 494.00 Tm (time. Instead of building a better encoder, we) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 483.00 Tm (expose the generator to increasingly difficult) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 472.00 Tm (retrieval contexts during instruction tuning,) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 461.00 Tm (so that it learns to ignore irrelevant passag-) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 450.00 Tm (es and to stitch together evidence that is) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 439.00 Tm (scattered across sections. The intuition is) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 428.00 Tm (simple: a model that has only ever seen clean,) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 417.00 Tm (well-matched context never learns to recover) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 406.00 Tm (from a noisy one.) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 389.00 Tm (Our curriculum has three stages. The first) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 378.00 Tm (stage uses passages that contain the answer) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 367.00 Tm (verbatim, which teaches the model to copy) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 356.00 Tm (rather than paraphrase. The second stage intr-) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 345.00 Tm (oduces distractor passages drawn from the same) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 334.00 Tm (section, forcing the model to discriminate) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 323.00 Tm (between near-duplicate claims. The third stage) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 312.00 Tm (samples distractors from the same document but) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 301.00 Tm (a different section, which is where most real-) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 290.00 Tm (istic failures occur. We keep the retriever) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 279.00 Tm (frozen throughout, so that any improvement is) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 268.00 Tm (attributable to the generator.) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 150.00 Tm (Fig. 1. Curriculum stages and their effect on) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 139.00 Tm (exact-match accuracy. Stage three contributes) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 128.00 Tm (the largest single gain.) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Length 4200 >>
+stream
+BT /F1 7.5 Tf 1 0 0 1 54.00 752.00 Tm (Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing) Tj ET
+BT /F1 8 Tf 1 0 0 1 302.00 34.00 Tm (2) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 718.00 Tm (Evaluations use three held-out benchmarks. The) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 707.00 Tm (biology set contains questions whose answers) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 696.00 Tm (require combining a figure caption with the) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 685.00 Tm (surrounding paragraph. The materials set is) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 674.00 Tm (dominated by numeric claims and unit conversi-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 663.00 Tm (ons. The computer science set includes questi-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 652.00 Tm (ons about experimental setup that are answera-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 641.00 Tm (ble only from appendix material. We report) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 630.00 Tm (exact match, token-level F1, and a citation-s-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 619.00 Tm (upport score that measures whether the cited) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 608.00 Tm (span actually entails the answer.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 591.00 Tm (Results show a consistent advantage over the) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 580.00 Tm (instruction-tuned baseline. The improvement is) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 569.00 Tm (largest on multi-paragraph questions, which is) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 558.00 Tm (consistent with our hypothesis that the curri-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 547.00 Tm (culum teaches evidence stitching. On single-p-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 536.00 Tm (aragraph questions the gain is modest but) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 525.00 Tm (never negative. Notably, the frozen retriever) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 514.00 Tm (means that the entire improvement comes from) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 503.00 Tm (how the generator consumes context, which has) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 492.00 Tm (practical consequences: existing retrieval) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 481.00 Tm (infrastructure does not need to be retrained) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 470.00 Tm (or re-indexed.) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 718.00 Tm (Ablations isolate the contribution of each) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 707.00 Tm (curriculum stage. Removing the third stage) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 696.00 Tm (accounts for roughly half of the total gain,) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 685.00 Tm (suggesting that section-level distractors are) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 674.00 Tm (the most informative signal. Removing the) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 663.00 Tm (second stage has a smaller effect but increas-) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 652.00 Tm (es hallucinated numbers, presumably because) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 641.00 Tm (the model never learns to compare competing) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 630.00 Tm (numeric claims. The retriever choice matters) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 619.00 Tm (less: swapping the hybrid retriever for a pure) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 608.00 Tm (dense retriever changes accuracy by less than) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 597.00 Tm (one point.) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 580.00 Tm (We also examine failure cases. The dominant) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 569.00 Tm (remaining error is unit confusion, where the) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 558.00 Tm (model reports a correct number with an incorr-) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 547.00 Tm (ect scale. A second cluster involves questions) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 536.00 Tm (that require reading a table, which our pipel-) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 525.00 Tm (ine serialises poorly. Both suggest that moda-) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 514.00 Tm (lity-aware retrieval, rather than better text) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 503.00 Tm (retrieval, is the next bottleneck. We leave) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 492.00 Tm (this to future work and release our harness so) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 481.00 Tm (that others can measure progress on the same) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 470.00 Tm (splits.) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Length 5279 >>
+stream
+BT /F1 7.5 Tf 1 0 0 1 54.00 752.00 Tm (Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing) Tj ET
+BT /F1 8 Tf 1 0 0 1 302.00 34.00 Tm (3) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 718.00 Tm (Large language models have become the default) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 707.00 Tm (interface for scientific literature search,) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 696.00 Tm (yet their answers remain unstable when a ques-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 685.00 Tm (tion requires synthesising evidence from) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 674.00 Tm (several passages. A common failure mode is) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 663.00 Tm (fluent but unsupported elaboration: the model) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 652.00 Tm (produces a plausible mechanism, a plausible) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 641.00 Tm (number, or a plausible citation, none of which) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 630.00 Tm (appear in the source material. This is especi-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 619.00 Tm (ally damaging in domains where readers cannot) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 608.00 Tm (verify claims from background knowledge alone,) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 597.00 Tm (such as materials synthesis or clinical) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 586.00 Tm (dosage.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 569.00 Tm (Retrieval augmentation is the standard remedy.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 558.00 Tm (A retriever selects passages from a corpus,) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 547.00 Tm (and the generator conditions on them. In prac-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 536.00 Tm (tice, however, most pipelines are tuned on) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 525.00 Tm (open-domain web text, where passages are) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 514.00 Tm (short, redundant, and lexically close to the) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 503.00 Tm (question. Scientific passages behave differen-) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 492.00 Tm (tly. They are long, densely nominalised, and) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 481.00 Tm (rely on notation that the retriever has never) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 470.00 Tm (seen during pretraining. A retriever trained) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 459.00 Tm (on Wikipedia therefore underperforms exactly) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 448.00 Tm (where the task is hardest.) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 718.00 Tm (We argue that the mismatch is best addressed) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 707.00 Tm (at training time rather than at retrieval) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 696.00 Tm (time. Instead of building a better encoder, we) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 685.00 Tm (expose the generator to increasingly difficult) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 674.00 Tm (retrieval contexts during instruction tuning,) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 663.00 Tm (so that it learns to ignore irrelevant passag-) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 652.00 Tm (es and to stitch together evidence that is) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 641.00 Tm (scattered across sections. The intuition is) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 630.00 Tm (simple: a model that has only ever seen clean,) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 619.00 Tm (well-matched context never learns to recover) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 608.00 Tm (from a noisy one.) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 591.00 Tm (Our curriculum has three stages. The first) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 580.00 Tm (stage uses passages that contain the answer) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 569.00 Tm (verbatim, which teaches the model to copy) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 558.00 Tm (rather than paraphrase. The second stage intr-) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 547.00 Tm (oduces distractor passages drawn from the same) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 536.00 Tm (section, forcing the model to discriminate) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 525.00 Tm (between near-duplicate claims. The third stage) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 514.00 Tm (samples distractors from the same document but) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 503.00 Tm (a different section, which is where most real-) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 492.00 Tm (istic failures occur. We keep the retriever) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 481.00 Tm (frozen throughout, so that any improvement is) Tj ET
+BT /F1 9 Tf 1 0 0 1 318.00 470.00 Tm (attributable to the generator.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 210.00 Tm (References) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 197.00 Tm ([1] A. Vaswani et al. Attention is all you) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 187.00 Tm (need. In NeurIPS, 2017.) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 174.00 Tm ([2] P. Lewis et al. Retrieval-augmented gener-) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 164.00 Tm (ation for knowledge-intensive NLP. In NeurIPS,) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 154.00 Tm (2020.) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 141.00 Tm ([3] G. Izacard and E. Grave. Leveraging) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 131.00 Tm (passage retrieval with generative models. In) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 121.00 Tm (EACL, 2021.) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 108.00 Tm ([4] S. Robertson and H. Zaragoza. The probabi-) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 98.00 Tm (listic relevance framework: BM25 and beyond.) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 88.00 Tm (2009.) Tj ET
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000253 00000 n 
+0000000379 00000 n 
+0000000505 00000 n 
+0000000602 00000 n 
+0000007016 00000 n 
+0000011268 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+16599
+%%EOF

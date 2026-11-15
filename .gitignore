@@ -1,0 +1,32 @@
+node_modules/
+out/
+dist/
+dist-web/
+
+# 运行时数据（含加密后的 API Key，绝对不能提交）
+.userdata/
+.chrome-profile*/
+.cache/
+.tmp/
+
+# 日志与临时产物
+*.log
+dom.html
+probe.txt
+npm-debug.log*
+
+# 测试截图（体积大且每次跑都会变）
+smoke.png
+cdp-shot.png
+electron-shot.png
+shot.png
+glossary-shot.png
+error-shot.png
+prompt-shot.png
+
+# 编译缓存
+*.tsbuildinfo
+
+# 系统垃圾
+.DS_Store
+Thumbs.db

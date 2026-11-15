@@ -1,0 +1,13 @@
+# 仓库里的文本一律 LF，避免 Windows 上提交 CRLF 把 diff 搞乱
+* text=auto eol=lf
+
+*.pdf binary
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+
+# 生成的 PDF 在 diff 里没有意义
+samples/*.pdf -diff
+src/renderer/public/*.pdf -diff
