@@ -44,17 +44,39 @@ PDF 靠左对齐，右侧常驻 460px 阅读栏。窗口窄于 1120px 时，阅�
 
 ## 直接下载（不用编译）
 
-[Releases](https://github.com/Violit-hub/paperlens-LetsReadPaper/releases) 里有打包好的 Windows 免安装版：
+[Releases](https://github.com/Violit-hub/paperlens-LetsReadPaper/releases) 里有打包好的 Windows 免安装版，两个格式任选：
 
-1. 下载 `PaperLens-win32-x64.zip`（约 110 MB）
-2. 解压到任意目录，比如 `D:\Apps\PaperLens`
-3. 双击 `PaperLens.exe`
+| 文件 | 大小 | 解压方式 |
+|---|---|---|
+| `PaperLens-win32-x64.zip` | 100 MB | 右键「全部解压缩」，通用 |
+| `PaperLens-win32-x64.tar.xz` | **74 MB** | 需要 `tar -xf` 或 7-Zip |
+
+下载后：
+
+1. 解压到任意目录，比如 `D:\Apps\PaperLens`
+2. 双击 `PaperLens.exe`
 
 不用装 Node，不用跑 npm。删除文件夹即卸载，配置和数据都在解压目录的 `paperlens-data/` 里。
 
 **双击没反应？** 改用 `Start-if-crash.bat`。它多带一个 `--no-sandbox`，能绕过一部分受限环境（公司电脑、开了 Chromium 沙箱限制的系统）下的初始化失败问题。
 
 > 目前只提供 Windows x64。macOS / Linux 要在对应平台上构建，`scripts/package-win.mjs` 的组装逻辑可以参照。
+
+### 关于体积
+
+解压后 231 MB，其中：
+
+| 组成 | 大小 | 说明 |
+|---|---|---|
+| `PaperLens.exe` | 180 MB | Chromium + V8 + Node，Electron 的固定成本 |
+| `icudtl.dat` + `resources.pak` | 16 MB | 国际化数据与资源 |
+| `LICENSES.chromium.html` | 8.7 MB | Chromium 的许可证文本，分发时必须带上 |
+| 图形 dll | 20 MB | ANGLE / D3D / SwiftShader |
+| 我们的代码 | 2.5 MB | 全部业务逻辑 |
+
+语言包已经从 55 个（40 MB）砍到中英两个（0.9 MB）——这是唯一能安全删掉的大块。剩下的基本是 Electron 的地板价。
+
+**想再小一个数量级，只能换 Tauri**（用系统 WebView 代替打包 Chromium，产物约 8 MB）。前端代码能复用九成，但 IPC、文件读写、`safeStorage` 这些要重写成 Rust，大概 2–3 天。在 100 MB 还能接受的情况下不值得。
 
 ---
 

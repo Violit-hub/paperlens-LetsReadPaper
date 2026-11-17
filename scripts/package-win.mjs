@@ -79,6 +79,16 @@ cpSync(ELECTRON_DIST, APP_ROOT, { recursive: true })
 // Electron 自带的默认应用会让程序去开一个空白窗口，删掉
 rmSync(join(APP_ROOT, 'resources/default_app.asar'), { force: true })
 
+// 语言包：Electron 自带 55 个，占 40MB。中文界面我们自己做，这里只需要
+// 中英两个（缺语言时 Chromium 会回退到 en-US）。这一刀砍掉 39MB。
+const LOCALES_KEEP = new Set(['en-US.pak', 'zh-CN.pak'])
+const localesDir = join(APP_ROOT, 'locales')
+if (existsSync(localesDir)) {
+  for (const entry of readdirSync(localesDir)) {
+    if (!LOCALES_KEEP.has(entry)) rmSync(join(localesDir, entry), { force: true })
+  }
+}
+
 console.log('写入应用文件…')
 cpSync(BUILD, join(APP_DIR, 'out'), { recursive: true })
 cpSync(join(ROOT, 'resources/icon.png'), join(APP_DIR, 'resources/icon.png'))
