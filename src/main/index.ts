@@ -1,7 +1,7 @@
 import { app, BrowserWindow, dialog, ipcMain, safeStorage, shell } from 'electron'
-import { appendFileSync } from 'node:fs'
+import { appendFileSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import { join } from 'node:path'
+import { dirname, join } from 'node:path'
 
 /**
  * 主进程日志。Windows 上 Electron 是 GUI 子系统程序，stdout/stderr 不一定
@@ -29,6 +29,35 @@ logMain('module loaded')
 /* ------------------------------------------------------------------ *
  *  调试开关（必须在 app ready 之前追加）
  * ------------------------------------------------------------------ */
+
+/**
+ * 绿色版：数据目录放在 exe 旁边，永远不碰 %APPDATA%。
+ *
+ * 不只是「便携」的体验问题 —— 在受限环境里 app.getPath('userData') 本身
+ * 就可能段错误，而这个调用连 JS 异常都抛不出来，日志里什么都看不到。
+ * 所以打包版直接绕开它。只读目录（比如装在 Program Files）退到临时目录。
+ */
+function setupPortableUserData(): void {
+  if (!app.isPackaged || process.env['PAPERLENS_USER_DATA']) return
+
+  const candidates = [
+    join(dirname(process.execPath), 'paperlens-data'),
+    join(process.env['TEMP'] ?? process.env['TMP'] ?? process.cwd(), 'paperlens-data')
+  ]
+
+  for (const dir of candidates) {
+    try {
+      mkdirSync(dir, { recursive: true })
+      app.setPath('userData', dir)
+      return
+    } catch {
+      /* 试下一个 */
+    }
+  }
+}
+
+setupPortableUserData()
+
 if (process.env['PAPERLENS_USER_DATA']) {
   // 某些受限环境下 %APPDATA% 不可写，Electron 会在 ready 前直接段错误。
   // 允许把用户数据目录指到别处。

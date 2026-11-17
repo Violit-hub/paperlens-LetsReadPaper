@@ -42,7 +42,23 @@ PDF 靠左对齐，右侧常驻 460px 阅读栏。窗口窄于 1120px 时，阅�
 
 ---
 
-## 快速开始
+## 直接下载（不用编译）
+
+[Releases](https://github.com/Violit-hub/paperlens-LetsReadPaper/releases) 里有打包好的 Windows 免安装版：
+
+1. 下载 `PaperLens-win32-x64.zip`（约 110 MB）
+2. 解压到任意目录，比如 `D:\Apps\PaperLens`
+3. 双击 `PaperLens.exe`
+
+不用装 Node，不用跑 npm。删除文件夹即卸载，配置和数据都在解压目录的 `paperlens-data/` 里。
+
+**双击没反应？** 改用 `Start-if-crash.bat`。它多带一个 `--no-sandbox`，能绕过一部分受限环境（公司电脑、开了 Chromium 沙箱限制的系统）下的初始化失败问题。
+
+> 目前只提供 Windows x64。macOS / Linux 要在对应平台上构建，`scripts/package-win.mjs` 的组装逻辑可以参照。
+
+---
+
+## 从源码跑
 
 ### 1. 安装依赖
 

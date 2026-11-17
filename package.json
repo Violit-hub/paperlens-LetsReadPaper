@@ -11,6 +11,7 @@
     "dev:web": "vite --config vite.web.config.ts",
     "build": "electron-vite build",
     "build:web": "vite build --config vite.web.config.ts",
+    "package:win": "electron-vite build && node scripts/package-win.mjs",
     "preview": "electron-vite preview",
     "start": "electron . --no-sandbox --user-data-dir=.userdata",
     "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
